@@ -37,6 +37,6 @@ python3 train.py
 ### Main directories and files
 
 - `./data`: storage for datasets and embeddings
-- `./src/data_preprocess`: codes for preprocessing data
+- `./data_pro`: codes for preprocessing data
 - `./src/train.py`: codes for training model
 - `./src/model.py`: codes for building model
