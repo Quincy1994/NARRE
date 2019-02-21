@@ -171,7 +171,7 @@ class NARRE(object):
             bai = tf.Variable(tf.constant(0.1, shape=[attention_size]), name="bai")
             bbi = tf.Variable(tf.constant(0.1, shape=[1]), name="bbi")
             self.uid_a = tf.nn.relu(tf.nn.embedding_lookup(uidW, self.input_reiid))
-            self.i_j = tf.einsum('ajk,kl=ajl', tf.nn.relu(
+            self.i_j = tf.einsum('ajk,kl->ajl', tf.nn.relu(
                 tf.einsum('ajk,kl->ajl', self.h_drop_i, Wai) + tf.einsum('ajk,kl->ajl', self.uid_a, Wri) + bai),
                 Wpi) + bbi
             self.i_a = tf.nn.softmax(self.i_j, 1)
